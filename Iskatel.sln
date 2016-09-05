@@ -1,0 +1,46 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.25420.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Iskatel.Web", "Iskatel.Web\Iskatel.Web.csproj", "{F825BDAF-7E34-4CB4-846C-3927D6C8D7FD}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Iskatel.Web.Tests", "Iskatel.Web.Tests\Iskatel.Web.Tests.csproj", "{4750ABF8-AD8D-4B0C-A9C9-4D905BC17B0C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Iskatel.Model", "Iskatel.Model\Iskatel.Model.csproj", "{725CEA68-DD08-4377-9526-3FAE549C521A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Iskatel.DataAccess.Intefaces", "Iskatel.DataAccess.Intefaces\Iskatel.DataAccess.Intefaces.csproj", "{1B33CCEB-C283-428F-8A67-8218BDEF5007}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Iskatel.DataAccess.ArangoServices", "Iskatel.DataAccess.ArangoServices\Iskatel.DataAccess.ArangoServices.csproj", "{8FFC086B-4498-4A2D-A0F8-4FA3FB84D07B}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{F825BDAF-7E34-4CB4-846C-3927D6C8D7FD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F825BDAF-7E34-4CB4-846C-3927D6C8D7FD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F825BDAF-7E34-4CB4-846C-3927D6C8D7FD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F825BDAF-7E34-4CB4-846C-3927D6C8D7FD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4750ABF8-AD8D-4B0C-A9C9-4D905BC17B0C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4750ABF8-AD8D-4B0C-A9C9-4D905BC17B0C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4750ABF8-AD8D-4B0C-A9C9-4D905BC17B0C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4750ABF8-AD8D-4B0C-A9C9-4D905BC17B0C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{725CEA68-DD08-4377-9526-3FAE549C521A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{725CEA68-DD08-4377-9526-3FAE549C521A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{725CEA68-DD08-4377-9526-3FAE549C521A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{725CEA68-DD08-4377-9526-3FAE549C521A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1B33CCEB-C283-428F-8A67-8218BDEF5007}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1B33CCEB-C283-428F-8A67-8218BDEF5007}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1B33CCEB-C283-428F-8A67-8218BDEF5007}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1B33CCEB-C283-428F-8A67-8218BDEF5007}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8FFC086B-4498-4A2D-A0F8-4FA3FB84D07B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8FFC086B-4498-4A2D-A0F8-4FA3FB84D07B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8FFC086B-4498-4A2D-A0F8-4FA3FB84D07B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8FFC086B-4498-4A2D-A0F8-4FA3FB84D07B}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
