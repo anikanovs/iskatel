@@ -1,0 +1,25 @@
+﻿@using Iskatel.Model;
+@model Source
+@{
+    ViewBag.Title = "Source";
+}
+
+<h2>Source</h2>
+@Model.Title<br/>
+Жанр: 
+@foreach (var genre in Model.Genres)
+{
+    @genre
+}
+<br/>
+Авторы:
+@foreach (var author in Model.Authors)
+{
+    @author.FullName
+}
+<br />
+Персонажи:
+@foreach (var human in Model.Characters)
+{
+    @human.FullName 
+}
