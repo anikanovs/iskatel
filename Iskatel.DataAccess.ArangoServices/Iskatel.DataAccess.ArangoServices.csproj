@@ -30,6 +30,18 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="ArangoDB.Client, Version=0.7.42.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\ArangoDB.Client.0.7.42\lib\portable45-net45+win8+wpa81\ArangoDB.Client.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="ArangoDB.Client.Common, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\ArangoDB.Client.0.7.42\lib\portable45-net45+win8+wpa81\ArangoDB.Client.Common.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=7.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.7.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -52,6 +64,9 @@
       <Project>{725cea68-dd08-4377-9526-3fae549c521a}</Project>
       <Name>Iskatel.Model</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
