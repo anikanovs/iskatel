@@ -281,6 +281,10 @@
       <Project>{1b33cceb-c283-428f-8a67-8218bdef5007}</Project>
       <Name>Iskatel.DataAccess.Intefaces</Name>
     </ProjectReference>
+    <ProjectReference Include="..\Iskatel.DataAccess.SQLServices\Iskatel.DataAccess.SQLServices.csproj">
+      <Project>{29f21ca2-ca6b-49ee-9ae7-086a1cef4e31}</Project>
+      <Name>Iskatel.DataAccess.SQLServices</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Iskatel.Model\Iskatel.Model.csproj">
       <Project>{725cea68-dd08-4377-9526-3fae549c521a}</Project>
       <Name>Iskatel.Model</Name>

@@ -13,6 +13,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Iskatel.DataAccess.Inteface
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Iskatel.DataAccess.ArangoServices", "Iskatel.DataAccess.ArangoServices\Iskatel.DataAccess.ArangoServices.csproj", "{8FFC086B-4498-4A2D-A0F8-4FA3FB84D07B}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Iskatel.DataAccess.SQLServices", "Iskatel.DataAccess.SQLServices\Iskatel.DataAccess.SQLServices.csproj", "{29F21CA2-CA6B-49EE-9AE7-086A1CEF4E31}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -39,6 +41,10 @@ Global
 		{8FFC086B-4498-4A2D-A0F8-4FA3FB84D07B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{8FFC086B-4498-4A2D-A0F8-4FA3FB84D07B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{8FFC086B-4498-4A2D-A0F8-4FA3FB84D07B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{29F21CA2-CA6B-49EE-9AE7-086A1CEF4E31}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{29F21CA2-CA6B-49EE-9AE7-086A1CEF4E31}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{29F21CA2-CA6B-49EE-9AE7-086A1CEF4E31}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{29F21CA2-CA6B-49EE-9AE7-086A1CEF4E31}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
