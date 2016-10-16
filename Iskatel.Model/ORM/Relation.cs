@@ -7,15 +7,16 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace Iskatel.DataAccess.SQLServices.ORM
+namespace Iskatel.Model.ORM
 {
     using System;
     using System.Collections.Generic;
     
-    public partial class Entity
+    public partial class Relation
     {
         public int Id { get; set; }
         public int ClassId { get; set; }
-        public string StringIdentifier { get; set; }
+        public Nullable<int> SourceId { get; set; }
+        public Nullable<int> DestinationId { get; set; }
     }
 }

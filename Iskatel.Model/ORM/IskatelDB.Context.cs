@@ -7,7 +7,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace Iskatel.DataAccess.SQLServices.ORM
+namespace Iskatel.Model.ORM
 {
     using System;
     using System.Data.Entity;

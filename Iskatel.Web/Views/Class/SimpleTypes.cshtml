@@ -1,0 +1,21 @@
+﻿@using Iskatel.Model
+@model List<KBSimpleType>
+@{
+    ViewBag.Title = "SimpleTypes";
+}
+
+<h2>Simple Types</h2>
+@foreach (var item in Model)
+{
+    <p>@item.Name</p>
+}
+<p>
+@using (Html.BeginForm("AddSimpleType", "Class", FormMethod.Post))
+{
+    @Html.TextBox("typeName")
+    <input type="submit" value="добавить" />
+}
+</p>
+
+
+

@@ -52,59 +52,10 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ClassService.cs" />
-    <Compile Include="ORM\Class.cs">
-      <DependentUpon>IskatelDB.tt</DependentUpon>
-    </Compile>
-    <Compile Include="ORM\Data.cs">
-      <DependentUpon>IskatelDB.tt</DependentUpon>
-    </Compile>
-    <Compile Include="ORM\Entity.cs">
-      <DependentUpon>IskatelDB.tt</DependentUpon>
-    </Compile>
-    <Compile Include="ORM\IskatelDB.Context.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>IskatelDB.Context.tt</DependentUpon>
-    </Compile>
-    <Compile Include="ORM\IskatelDB.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>IskatelDB.tt</DependentUpon>
-    </Compile>
-    <Compile Include="ORM\IskatelDB.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>IskatelDB.edmx</DependentUpon>
-    </Compile>
-    <Compile Include="ORM\Relation.cs">
-      <DependentUpon>IskatelDB.tt</DependentUpon>
-    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <EntityDeploy Include="ORM\IskatelDB.edmx">
-      <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>IskatelDB.Designer.cs</LastGenOutput>
-    </EntityDeploy>
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="App.Config" />
-    <None Include="ORM\IskatelDB.edmx.diagram">
-      <DependentUpon>IskatelDB.edmx</DependentUpon>
-    </None>
     <None Include="packages.config" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="ORM\IskatelDB.Context.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>IskatelDB.edmx</DependentUpon>
-      <LastGenOutput>IskatelDB.Context.cs</LastGenOutput>
-    </Content>
-    <Content Include="ORM\IskatelDB.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>IskatelDB.edmx</DependentUpon>
-      <LastGenOutput>IskatelDB.cs</LastGenOutput>
-    </Content>
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
