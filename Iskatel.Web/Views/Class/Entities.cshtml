@@ -9,4 +9,11 @@
 {
     <p>@Html.ActionLink(item.Name, "EditEntity", new { id = item.Id })</p>
 }
+<p>
+    @using (Html.BeginForm("AddEntity", "Class", FormMethod.Post))
+    {
+        @Html.TextBox("name")
+        <input type="submit" value="add" />
+    }
+</p>
 

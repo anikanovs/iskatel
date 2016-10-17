@@ -96,5 +96,80 @@ namespace Iskatel.DataAccess.SQLServices
                 return query.ToList();
             }
         }
+
+        public void AddKBEntity(string entityName)
+        {
+            using (var c = new iskateli_devEntities())
+            {
+                var _class = new Class()
+                {
+                    ParentId = (int)KBClassType.KBEntity,
+                    TypeClassId = (int)KBClassType.KBEntity
+                };
+                c.Class.Add(_class);
+                c.SaveChanges();
+                var data = new Data()
+                {
+                    ClassId = _class.Id,
+                    Data1 = entityName
+                };
+                c.Data.Add(data);
+                c.SaveChanges();
+            }
+        }
+
+        public void AddFieldToKBEntity(int entityId, string fieldName, int typeId)
+        {
+            using (var c = new iskateli_devEntities())
+            {
+                var _class = new Class()
+                {
+                    ParentId = entityId,
+                    TypeClassId = typeId
+                };
+                c.Class.Add(_class);
+                c.SaveChanges();
+                var data = new Data()
+                {
+                    ClassId = _class.Id,
+                    Data1 = fieldName
+                };
+                c.Data.Add(data);
+                c.SaveChanges();
+            }
+        }
+
+        public KBEntity GetKBEntity(int id)
+        {
+            using (var c = new iskateli_devEntities())
+            {
+                var query = (from cl in c.Class
+                            join d in c.Data on cl.Id equals d.ClassId
+                            where cl.Id == id
+                            select new
+                            {
+                                Id = cl.Id,
+                                Name = d.Data1
+                            }).SingleOrDefault();
+                var result = new KBEntity()
+                {
+                    Id = query.Id,
+                    Name = query.Name
+                };
+                var fields = (from cl in c.Class
+                              join d in c.Data on cl.Id equals d.ClassId
+                              join td in c.Data on cl.TypeClassId equals td.ClassId
+                              where cl.ParentId == id
+                              select new KBEntityField()
+                              {
+                                  Id = cl.Id,
+                                  Name = d.Data1,
+                                  TypeId = cl.TypeClassId.Value,
+                                  TypeName = td.Data1
+                              }).ToList();
+                result.Fields = fields;
+                return result;
+            }
+        }
     }
 }

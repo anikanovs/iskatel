@@ -51,11 +51,15 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AddKBEntityFieldModel.cs" />
+    <Compile Include="EditEntityModel.cs" />
     <Compile Include="IdNamePair.cs" />
     <Compile Include="KBClass.cs" />
     <Compile Include="KBClassType.cs" />
     <Compile Include="Date.cs" />
     <Compile Include="Human.cs" />
+    <Compile Include="KBEntity.cs" />
+    <Compile Include="KBEntityField.cs" />
     <Compile Include="KBSimpleType.cs" />
     <Compile Include="ORM\Class.cs">
       <DependentUpon>IskatelDB.tt</DependentUpon>

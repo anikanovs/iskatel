@@ -1,7 +1,24 @@
-﻿
+﻿@using Iskatel.Model
+@model EditEntityModel
 @{
     ViewBag.Title = "Edit entity";
 }
 
 <h2>Edit entity</h2>
+
+<h3>@Model.Entity.Name</h3>
+@foreach (var field in Model.Entity.Fields)
+{
+    <p>@field.Name : @field.TypeName</p>
+}
+<p>
+    <h3>Add field</h3>
+    @using (Html.BeginForm("AddEntityField", "Class", FormMethod.Post))
+    {
+        @Html.HiddenFor(m => m.AddFieldModel.KBEntityId)
+        @Html.TextBoxFor(m => m.AddFieldModel.Name)
+        @Html.DropDownListFor(m => m.AddFieldModel.TypeId, Model.Types.Select(x => new SelectListItem() { Text = x.Name, Value = x.Id.ToString() }))
+        @:<input type="submit" value="add" />
+    }
+</p>
 
