@@ -11,5 +11,7 @@ namespace Iskatel.DataAccess.Intefaces
         List<KBSimpleType> GetKBSimpleTypeList();
 
         void AddKBSimpleType(string typeName);
+
+        List<IdNamePair> GetKBEntityList();
     }
 }

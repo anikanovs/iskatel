@@ -27,5 +27,16 @@ namespace Iskatel.Web.Controllers
             _classService.AddKBSimpleType(typeName);
             return RedirectToAction("SimpleTypes");
         }
+
+        public ActionResult Entities()
+        {
+            var model = _classService.GetKBEntityList();
+            return View(model);
+        }
+
+        public ActionResult EditEntity(int id)
+        {
+            return View();
+        }
     }
 }

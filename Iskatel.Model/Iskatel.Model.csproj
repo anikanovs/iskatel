@@ -51,6 +51,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="IdNamePair.cs" />
     <Compile Include="KBClass.cs" />
     <Compile Include="KBClassType.cs" />
     <Compile Include="Date.cs" />

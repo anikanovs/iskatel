@@ -80,5 +80,21 @@ namespace Iskatel.DataAccess.SQLServices
                 c.SaveChanges();
             }
         }
+
+        public List<IdNamePair> GetKBEntityList()
+        {
+            using (var c = new iskateli_devEntities())
+            {
+                var query = from cl in c.Class
+                            join d in c.Data on cl.Id equals d.ClassId
+                            where cl.ParentId == (int)KBClassType.KBEntity
+                            select new IdNamePair()
+                            {
+                                Id = cl.Id,
+                                Name = d.Data1
+                            };
+                return query.ToList();
+            }
+        }
     }
 }

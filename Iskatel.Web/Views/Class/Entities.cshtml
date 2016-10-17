@@ -1,0 +1,12 @@
+﻿@using Iskatel.Model
+@model List<IdNamePair>
+@{
+    ViewBag.Title = "Entities";
+}
+
+<h2>Entities</h2>
+@foreach (var item in Model)
+{
+    <p>@Html.ActionLink(item.Name, "EditEntity", new { id = item.Id })</p>
+}
+
