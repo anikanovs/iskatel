@@ -43,15 +43,9 @@ namespace Iskatel.Web.Controllers
 
         public ActionResult EditEntity(int id)
         {
-            var entity = _classService.GetKBEntity(id);
-            var addField = new AddKBEntityFieldModel() { KBEntityId = id };
-            var types = _classService.GetKBSimpleTypeList();
-            var model = new EditEntityModel()
-            {
-                Entity = entity,
-                AddFieldModel = addField,
-                Types = types
-            };
+            ViewBag.Entity = _classService.GetKBEntity(id);
+            var model = new AddKBEntityFieldModel() { KBEntityId = id };
+            ViewBag.Types = _classService.GetKBSimpleTypeList();
             return View(model);
         }
 

@@ -52,7 +52,6 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AddKBEntityFieldModel.cs" />
-    <Compile Include="EditEntityModel.cs" />
     <Compile Include="IdNamePair.cs" />
     <Compile Include="KBClass.cs" />
     <Compile Include="KBClassType.cs" />
@@ -93,17 +92,18 @@
     <Compile Include="Source.cs" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="App.Config" />
     <EntityDeploy Include="ORM\IskatelDB.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
       <LastGenOutput>IskatelDB.Designer.cs</LastGenOutput>
     </EntityDeploy>
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="App.Config" />
     <None Include="ORM\IskatelDB.edmx.diagram">
       <DependentUpon>IskatelDB.edmx</DependentUpon>
     </None>
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="ORM\IskatelDB.Context.tt">
@@ -116,9 +116,6 @@
       <DependentUpon>IskatelDB.edmx</DependentUpon>
       <LastGenOutput>IskatelDB.cs</LastGenOutput>
     </Content>
-  </ItemGroup>
-  <ItemGroup>
-    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

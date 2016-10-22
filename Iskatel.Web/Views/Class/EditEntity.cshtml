@@ -1,13 +1,13 @@
 ﻿@using Iskatel.Model
-@model EditEntityModel
+@model AddKBEntityFieldModel
 @{
     ViewBag.Title = "Edit entity";
 }
 
 <h2>Edit entity</h2>
 
-<h3>@Model.Entity.Name</h3>
-@foreach (var field in Model.Entity.Fields)
+<h3>@ViewBag.Entity.Name</h3>
+@foreach (var field in ViewBag.Entity.Fields)
 {
     <p>@field.Name : @field.TypeName</p>
 }
@@ -15,9 +15,9 @@
     <h3>Add field</h3>
     @using (Html.BeginForm("AddEntityField", "Class", FormMethod.Post))
     {
-        @Html.HiddenFor(m => m.AddFieldModel.KBEntityId)
-        @Html.TextBoxFor(m => m.AddFieldModel.Name)
-        @Html.DropDownListFor(m => m.AddFieldModel.TypeId, Model.Types.Select(x => new SelectListItem() { Text = x.Name, Value = x.Id.ToString() }))
+        @Html.HiddenFor(m => m.KBEntityId)
+        @Html.TextBoxFor(m => m.Name)
+        @Html.DropDownListFor(m => m.TypeId, ((List<KBSimpleType>)ViewBag.Types).Select(x => new SelectListItem() { Text = x.Name, Value = x.Id.ToString() }))
         @:<input type="submit" value="add" />
     }
 </p>

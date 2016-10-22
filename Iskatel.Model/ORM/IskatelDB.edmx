@@ -9,7 +9,7 @@
           <Key>
             <PropertyRef Name="Id" />
           </Key>
-          <Property Name="Id" Type="int" Nullable="false" />
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="ParentId" Type="int" />
           <Property Name="TypeClassId" Type="int" />
         </EntityType>
@@ -17,7 +17,7 @@
           <Key>
             <PropertyRef Name="Id" />
           </Key>
-          <Property Name="Id" Type="int" Nullable="false" />
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="EntityId" Type="int" />
           <Property Name="RelationId" Type="nchar" MaxLength="10" />
           <Property Name="ClassId" Type="int" />
@@ -36,7 +36,7 @@
           <Key>
             <PropertyRef Name="Id" />
           </Key>
-          <Property Name="Id" Type="int" Nullable="false" />
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="ClassId" Type="int" Nullable="false" />
           <Property Name="SourceId" Type="int" />
           <Property Name="DestinationId" Type="int" />
@@ -88,7 +88,7 @@
           <Property Name="SourceId" Type="Int32" />
           <Property Name="DestinationId" Type="Int32" />
         </EntityType>
-        <EntityContainer Name="iskateli_devEntities" annotation:LazyLoadingEnabled="true">
+        <EntityContainer Name="iskateli_devEntities1" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="Class" EntityType="Self.Class" />
           <EntitySet Name="Data" EntityType="Self.Data" />
           <EntitySet Name="Entity" EntityType="Self.Entity" />
@@ -99,7 +99,7 @@
     <!-- C-S mapping content -->
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-        <EntityContainerMapping StorageEntityContainer="iskateli_devModelStoreContainer" CdmEntityContainer="iskateli_devEntities">
+        <EntityContainerMapping StorageEntityContainer="iskateli_devModelStoreContainer" CdmEntityContainer="iskateli_devEntities1">
           <EntitySetMapping Name="Class">
             <EntityTypeMapping TypeName="iskateli_devModel.Class">
               <MappingFragment StoreEntitySet="Class">

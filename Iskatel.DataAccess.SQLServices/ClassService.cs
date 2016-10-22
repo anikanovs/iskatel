@@ -64,18 +64,14 @@ namespace Iskatel.DataAccess.SQLServices
         {
             using (var c = new iskateli_devEntities())
             {
-                var _class = new Class()
-                {
-                    ParentId = (int)KBClassType.KBSimpleType,
-                    TypeClassId = (int)KBClassType.KBSimpleType
-                };
+                var _class = c.Class.Create();
+                _class.ParentId = (int)KBClassType.KBSimpleType;
+                _class.TypeClassId = (int)KBClassType.KBSimpleType;
                 c.Class.Add(_class);
                 c.SaveChanges();
-                var data = new Data()
-                {
-                    ClassId = _class.Id,
-                    Data1 = typeName
-                };
+                var data = c.Data.Create();
+                data.ClassId = _class.Id;
+                data.Data1 = typeName;
                 c.Data.Add(data);
                 c.SaveChanges();
             }
@@ -101,18 +97,14 @@ namespace Iskatel.DataAccess.SQLServices
         {
             using (var c = new iskateli_devEntities())
             {
-                var _class = new Class()
-                {
-                    ParentId = (int)KBClassType.KBEntity,
-                    TypeClassId = (int)KBClassType.KBEntity
-                };
+                var _class = c.Class.Create();
+                _class.ParentId = (int)KBClassType.KBEntity;
+                _class.TypeClassId = (int)KBClassType.KBEntity;
                 c.Class.Add(_class);
                 c.SaveChanges();
-                var data = new Data()
-                {
-                    ClassId = _class.Id,
-                    Data1 = entityName
-                };
+                var data = c.Data.Create();
+                data.ClassId = _class.Id;
+                data.Data1 = entityName;
                 c.Data.Add(data);
                 c.SaveChanges();
             }
@@ -122,18 +114,14 @@ namespace Iskatel.DataAccess.SQLServices
         {
             using (var c = new iskateli_devEntities())
             {
-                var _class = new Class()
-                {
-                    ParentId = entityId,
-                    TypeClassId = typeId
-                };
+                var _class = c.Class.Create();
+                _class.ParentId = entityId;
+                _class.TypeClassId = typeId;
                 c.Class.Add(_class);
                 c.SaveChanges();
-                var data = new Data()
-                {
-                    ClassId = _class.Id,
-                    Data1 = fieldName
-                };
+                var data = c.Data.Create();
+                data.ClassId = _class.Id;
+                data.Data1 = fieldName;
                 c.Data.Add(data);
                 c.SaveChanges();
             }
@@ -159,7 +147,7 @@ namespace Iskatel.DataAccess.SQLServices
                 var fields = (from cl in c.Class
                               join d in c.Data on cl.Id equals d.ClassId
                               join td in c.Data on cl.TypeClassId equals td.ClassId
-                              where cl.ParentId == id
+                              where cl.ParentId == id && d.EntityId == null && d.RelationId == null
                               select new KBEntityField()
                               {
                                   Id = cl.Id,
