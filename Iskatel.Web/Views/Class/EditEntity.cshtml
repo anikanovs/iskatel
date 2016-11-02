@@ -1,4 +1,5 @@
 ﻿@using Iskatel.Model
+@using Iskatel.Web.Models
 @model AddKBEntityFieldModel
 @{
     ViewBag.Title = "Edit entity";
@@ -16,8 +17,12 @@
     @using (Html.BeginForm("AddEntityField", "Class", FormMethod.Post))
     {
         @Html.HiddenFor(m => m.KBEntityId)
-        @Html.TextBoxFor(m => m.Name)
-        @Html.DropDownListFor(m => m.TypeId, ((List<KBSimpleType>)ViewBag.Types).Select(x => new SelectListItem() { Text = x.Name, Value = x.Id.ToString() }))
+        @Html.DisplayFor(m => m.Name)
+        @Html.TextBoxFor(m => m.Name)<br/>
+        @Html.DisplayFor(m => m.Alias)
+        @Html.TextBoxFor(m => m.Alias)<br/>
+        @Html.DisplayFor(m => m.TypeId)
+        @Html.DropDownListFor(m => m.TypeId, ((List<KBSimpleType>)ViewBag.Types).Select(x => new SelectListItem() { Text = x.Name, Value = x.Id.ToString() }))<br/>
         @:<input type="submit" value="add" />
     }
 </p>

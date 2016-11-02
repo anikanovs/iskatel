@@ -13,6 +13,7 @@
     @using (Html.BeginForm("AddEntity", "Class", FormMethod.Post))
     {
         @Html.TextBox("name")
+        @Html.TextBox("alias")
         <input type="submit" value="add" />
     }
 </p>

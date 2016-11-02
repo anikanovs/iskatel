@@ -11,11 +11,12 @@ namespace Iskatel.Model.ORM
 {
     using System;
     using System.Collections.Generic;
-
+    
     public partial class Class
     {
         public int Id { get; set; }
         public Nullable<int> ParentId { get; set; }
         public Nullable<int> TypeClassId { get; set; }
+        public string Alias { get; set; }
     }
 }

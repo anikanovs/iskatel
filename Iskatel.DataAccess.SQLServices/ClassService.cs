@@ -8,9 +8,9 @@ namespace Iskatel.DataAccess.SQLServices
 {
     public class ClassService : IClassService
     {
-        public KBClass Get(int id, iskateli_devEntities context = null)
+        public KBClass Get(int id, iskateli_devEntities1 context = null)
         {
-            using (var c = context == null ? new iskateli_devEntities() : context)
+            using (var c = context == null ? new iskateli_devEntities1() : context)
             {
                 // выбор класса из БД
                 var source = c.Class.SingleOrDefault(x => x.Id == id);
@@ -25,7 +25,7 @@ namespace Iskatel.DataAccess.SQLServices
             }
         }
 
-        private void GetChildren(KBClass parent, iskateli_devEntities context)
+        private void GetChildren(KBClass parent, iskateli_devEntities1 context)
         {
             // выбор списка классов из БД
             var childSources = context.Class.Where(x => x.ParentId == parent.Id);
@@ -46,7 +46,7 @@ namespace Iskatel.DataAccess.SQLServices
 
         public List<KBSimpleType> GetKBSimpleTypeList()
         {
-            using (var c = new iskateli_devEntities())
+            using (var c = new iskateli_devEntities1())
             {
                 var query = from cl in c.Class
                             join d in c.Data on cl.Id equals d.ClassId
@@ -54,19 +54,21 @@ namespace Iskatel.DataAccess.SQLServices
                             select new KBSimpleType()
                             {
                                 Id = cl.Id,
+                                Alias = cl.Alias,
                                 Name = d.Data1
                             };
                 return query.ToList(); 
             }
         }
 
-        public void AddKBSimpleType(string typeName)
+        public void AddKBSimpleType(string typeName, string typeAlias)
         {
-            using (var c = new iskateli_devEntities())
+            using (var c = new iskateli_devEntities1())
             {
                 var _class = c.Class.Create();
                 _class.ParentId = (int)KBClassType.KBSimpleType;
                 _class.TypeClassId = (int)KBClassType.KBSimpleType;
+                _class.Alias = typeAlias;
                 c.Class.Add(_class);
                 c.SaveChanges();
                 var data = c.Data.Create();
@@ -79,7 +81,7 @@ namespace Iskatel.DataAccess.SQLServices
 
         public List<IdNamePair> GetKBEntityList()
         {
-            using (var c = new iskateli_devEntities())
+            using (var c = new iskateli_devEntities1())
             {
                 var query = from cl in c.Class
                             join d in c.Data on cl.Id equals d.ClassId
@@ -93,13 +95,14 @@ namespace Iskatel.DataAccess.SQLServices
             }
         }
 
-        public void AddKBEntity(string entityName)
+        public void AddKBEntity(string entityName, string entityAlias)
         {
-            using (var c = new iskateli_devEntities())
+            using (var c = new iskateli_devEntities1())
             {
                 var _class = c.Class.Create();
                 _class.ParentId = (int)KBClassType.KBEntity;
                 _class.TypeClassId = (int)KBClassType.KBEntity;
+                _class.Alias = entityAlias;
                 c.Class.Add(_class);
                 c.SaveChanges();
                 var data = c.Data.Create();
@@ -110,13 +113,14 @@ namespace Iskatel.DataAccess.SQLServices
             }
         }
 
-        public void AddFieldToKBEntity(int entityId, string fieldName, int typeId)
+        public void AddFieldToKBEntity(int entityId, string alias, string fieldName, int typeId)
         {
-            using (var c = new iskateli_devEntities())
+            using (var c = new iskateli_devEntities1())
             {
                 var _class = c.Class.Create();
                 _class.ParentId = entityId;
                 _class.TypeClassId = typeId;
+                _class.Alias = alias;
                 c.Class.Add(_class);
                 c.SaveChanges();
                 var data = c.Data.Create();
@@ -129,7 +133,7 @@ namespace Iskatel.DataAccess.SQLServices
 
         public KBEntity GetKBEntity(int id)
         {
-            using (var c = new iskateli_devEntities())
+            using (var c = new iskateli_devEntities1())
             {
                 var query = (from cl in c.Class
                             join d in c.Data on cl.Id equals d.ClassId
@@ -137,11 +141,13 @@ namespace Iskatel.DataAccess.SQLServices
                             select new
                             {
                                 Id = cl.Id,
+                                Alias = cl.Alias,
                                 Name = d.Data1
                             }).SingleOrDefault();
                 var result = new KBEntity()
                 {
                     Id = query.Id,
+                    Alias = query.Alias,
                     Name = query.Name
                 };
                 var fields = (from cl in c.Class
@@ -151,6 +157,7 @@ namespace Iskatel.DataAccess.SQLServices
                               select new KBEntityField()
                               {
                                   Id = cl.Id,
+                                  Alias = cl.Alias,
                                   Name = d.Data1,
                                   TypeId = cl.TypeClassId.Value,
                                   TypeName = td.Data1

@@ -11,6 +11,7 @@ namespace Iskatel.Model.ORM
 {
     using System;
     using System.Collections.Generic;
+    
     public partial class Data
     {
         public int Id { get; set; }

@@ -51,7 +51,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AddKBEntityFieldModel.cs" />
     <Compile Include="IdNamePair.cs" />
     <Compile Include="KBClass.cs" />
     <Compile Include="KBClassType.cs" />

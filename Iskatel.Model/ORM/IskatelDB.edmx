@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="iskateli_devModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+    <Schema Namespace="iskateli_devModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="Class">
           <Key>
             <PropertyRef Name="Id" />
@@ -12,6 +12,7 @@
           <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="ParentId" Type="int" />
           <Property Name="TypeClassId" Type="int" />
+          <Property Name="Alias" Type="varchar" MaxLength="50" />
         </EntityType>
         <EntityType Name="Data">
           <Key>
@@ -47,19 +48,10 @@
           <EntitySet Name="Entity" EntityType="Self.Entity" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Relation" EntityType="Self.Relation" Schema="dbo" store:Type="Tables" />
         </EntityContainer>
-      </Schema>
-    </edmx:StorageModels>
+      </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="iskateli_devModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
-        <EntityType Name="Class">
-          <Key>
-            <PropertyRef Name="Id" />
-          </Key>
-          <Property Name="Id" Type="Int32" Nullable="false" />
-          <Property Name="ParentId" Type="Int32" />
-          <Property Name="TypeClassId" Type="Int32" />
-        </EntityType>
         <EntityType Name="Data">
           <Key>
             <PropertyRef Name="Id" />
@@ -89,26 +81,26 @@
           <Property Name="DestinationId" Type="Int32" />
         </EntityType>
         <EntityContainer Name="iskateli_devEntities1" annotation:LazyLoadingEnabled="true">
-          <EntitySet Name="Class" EntityType="Self.Class" />
           <EntitySet Name="Data" EntityType="Self.Data" />
           <EntitySet Name="Entity" EntityType="Self.Entity" />
           <EntitySet Name="Relation" EntityType="Self.Relation" />
+          <EntitySet Name="Class" EntityType="iskateli_devModel.Class" />
         </EntityContainer>
+        <EntityType Name="Class">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ParentId" Type="Int32" />
+          <Property Name="TypeClassId" Type="Int32" />
+          <Property Name="Alias" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+        </EntityType>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
         <EntityContainerMapping StorageEntityContainer="iskateli_devModelStoreContainer" CdmEntityContainer="iskateli_devEntities1">
-          <EntitySetMapping Name="Class">
-            <EntityTypeMapping TypeName="iskateli_devModel.Class">
-              <MappingFragment StoreEntitySet="Class">
-                <ScalarProperty Name="Id" ColumnName="Id" />
-                <ScalarProperty Name="ParentId" ColumnName="ParentId" />
-                <ScalarProperty Name="TypeClassId" ColumnName="TypeClassId" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
           <EntitySetMapping Name="Data">
             <EntityTypeMapping TypeName="iskateli_devModel.Data">
               <MappingFragment StoreEntitySet="Data">
@@ -137,6 +129,16 @@
                 <ScalarProperty Name="ClassId" ColumnName="ClassId" />
                 <ScalarProperty Name="SourceId" ColumnName="SourceId" />
                 <ScalarProperty Name="DestinationId" ColumnName="DestinationId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Class">
+            <EntityTypeMapping TypeName="iskateli_devModel.Class">
+              <MappingFragment StoreEntitySet="Class">
+                <ScalarProperty Name="Alias" ColumnName="Alias" />
+                <ScalarProperty Name="TypeClassId" ColumnName="TypeClassId" />
+                <ScalarProperty Name="ParentId" ColumnName="ParentId" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

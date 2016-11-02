@@ -5,6 +5,7 @@ using System.Web;
 using System.Web.Mvc;
 using Iskatel.DataAccess.Intefaces;
 using Iskatel.Model;
+using Iskatel.Web.Models;
 
 namespace Iskatel.Web.Controllers
 {
@@ -23,9 +24,9 @@ namespace Iskatel.Web.Controllers
             return View(model);
         }
 
-        public ActionResult AddSimpleType(string typeName)
+        public ActionResult AddSimpleType(string typeName, string typeAlias)
         {
-            _classService.AddKBSimpleType(typeName);
+            _classService.AddKBSimpleType(typeName, typeAlias);
             return RedirectToAction("SimpleTypes");
         }
 
@@ -35,9 +36,9 @@ namespace Iskatel.Web.Controllers
             return View(model);
         }
 
-        public ActionResult AddEntity(string name)
+        public ActionResult AddEntity(string name, string alias)
         {
-            _classService.AddKBEntity(name);
+            _classService.AddKBEntity(name, alias);
             return RedirectToAction("Entities");
         }
 
@@ -51,7 +52,7 @@ namespace Iskatel.Web.Controllers
 
         public ActionResult AddEntityField(AddKBEntityFieldModel model)
         {
-            _classService.AddFieldToKBEntity(model.KBEntityId, model.Name, model.TypeId);
+            _classService.AddFieldToKBEntity(model.KBEntityId, model.Alias, model.Name, model.TypeId);
             return RedirectToAction("EditEntity", new { id = model.KBEntityId });
         }
     }

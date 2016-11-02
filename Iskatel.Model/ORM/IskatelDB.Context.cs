@@ -13,10 +13,10 @@ namespace Iskatel.Model.ORM
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
-    public partial class iskateli_devEntities : DbContext
+    public partial class iskateli_devEntities1 : DbContext
     {
-        public iskateli_devEntities()
-            : base("name=iskateli_devEntities")
+        public iskateli_devEntities1()
+            : base("name=iskateli_devEntities1")
         {
         }
     
@@ -25,9 +25,9 @@ namespace Iskatel.Model.ORM
             throw new UnintentionalCodeFirstException();
         }
     
-        public virtual DbSet<Class> Class { get; set; }
         public virtual DbSet<Data> Data { get; set; }
         public virtual DbSet<Entity> Entity { get; set; }
         public virtual DbSet<Relation> Relation { get; set; }
+        public virtual DbSet<Class> Class { get; set; }
     }
 }
