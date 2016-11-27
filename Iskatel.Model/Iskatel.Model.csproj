@@ -83,6 +83,9 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>IskatelDB.edmx</DependentUpon>
     </Compile>
+    <Compile Include="ORM\Languages.cs">
+      <DependentUpon>IskatelDB.tt</DependentUpon>
+    </Compile>
     <Compile Include="ORM\Relation.cs">
       <DependentUpon>IskatelDB.tt</DependentUpon>
     </Compile>

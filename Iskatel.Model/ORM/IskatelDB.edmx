@@ -33,6 +33,14 @@
           <Property Name="ClassId" Type="int" Nullable="false" />
           <Property Name="StringIdentifier" Type="varchar" MaxLength="255" Nullable="false" />
         </EntityType>
+        <EntityType Name="Languages">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Name" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Code" Type="char" MaxLength="2" Nullable="false" />
+        </EntityType>
         <EntityType Name="Relation">
           <Key>
             <PropertyRef Name="Id" />
@@ -46,6 +54,7 @@
           <EntitySet Name="Class" EntityType="Self.Class" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Data" EntityType="Self.Data" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Entity" EntityType="Self.Entity" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Languages" EntityType="Self.Languages" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Relation" EntityType="Self.Relation" Schema="dbo" store:Type="Tables" />
         </EntityContainer>
       </Schema></edmx:StorageModels>
@@ -85,6 +94,7 @@
           <EntitySet Name="Entity" EntityType="Self.Entity" />
           <EntitySet Name="Relation" EntityType="Self.Relation" />
           <EntitySet Name="Class" EntityType="iskateli_devModel.Class" />
+          <EntitySet Name="Languages" EntityType="iskateli_devModel.Languages" />
         </EntityContainer>
         <EntityType Name="Class">
           <Key>
@@ -94,6 +104,14 @@
           <Property Name="ParentId" Type="Int32" />
           <Property Name="TypeClassId" Type="Int32" />
           <Property Name="Alias" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="Languages">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Code" Type="String" Nullable="false" MaxLength="2" FixedLength="true" Unicode="false" />
         </EntityType>
       </Schema>
     </edmx:ConceptualModels>
@@ -138,6 +156,15 @@
                 <ScalarProperty Name="Alias" ColumnName="Alias" />
                 <ScalarProperty Name="TypeClassId" ColumnName="TypeClassId" />
                 <ScalarProperty Name="ParentId" ColumnName="ParentId" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Languages">
+            <EntityTypeMapping TypeName="iskateli_devModel.Languages">
+              <MappingFragment StoreEntitySet="Languages">
+                <ScalarProperty Name="Code" ColumnName="Code" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
                 <ScalarProperty Name="Id" ColumnName="Id" />
               </MappingFragment>
             </EntityTypeMapping>

@@ -1,22 +1,33 @@
 ﻿@using Iskatel.Model
 @model List<KBSimpleType>
 @{
-    ViewBag.Title = "Simple types";
+    ViewBag.Title = "Типы полей сущностей";
 }
 
-<h2>Simple types</h2>
-@foreach (var item in Model)
-{
-    <p>@item.Name : @item.Alias</p>
-}
-<p>
+<h2>@ViewBag.Title</h2>
+<div id="grid-container"></div>
+<div id="form-container">
 @using (Html.BeginForm("AddSimpleType", "Class", FormMethod.Post))
 {
     @Html.TextBox("typeName")
     @Html.TextBox("typeAlias")
     <input type="submit" value="add" />
 }
-</p>
+</div>
+@section scripts 
+{
+    <script>
+    $(function() {
+        loadGrid();
+    });
+    function loadGrid() {
+        $.get('@Url.Action("_SimpleTypeList")',
+        function (data) {
+            $("#grid-container").html(data);
+        }); 
+    }
+    </script>
+}
 
 
 

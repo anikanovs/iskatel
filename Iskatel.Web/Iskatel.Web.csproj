@@ -264,6 +264,7 @@
     <Content Include="Views\Class\SimpleTypes.cshtml" />
     <Content Include="Views\Class\Entities.cshtml" />
     <Content Include="Views\Class\EditEntity.cshtml" />
+    <Content Include="Views\Class\_SimpleTypeList.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

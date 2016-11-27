@@ -1,0 +1,41 @@
+﻿@using Iskatel.Model;
+@model List<KBSimpleType>
+
+<table class="table-bordered">
+    <thead>
+        <tr>
+            <th>
+                Id
+            </th>
+            <th>
+                Название
+            </th>
+            <th>
+                Алиас
+            </th>
+            <th>
+                &nbsp;
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @item.Id
+            </td>
+            <td>
+                @item.Name
+            </td>
+            <td>
+                @item.Alias
+            </td>
+            <td>
+                <a href="#">править</a>
+                <a href="#">удалить</a>
+            </td>
+        </tr>
+    }
+    </tbody>
+</table>

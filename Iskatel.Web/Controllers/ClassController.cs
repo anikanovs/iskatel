@@ -24,6 +24,12 @@ namespace Iskatel.Web.Controllers
             return View(model);
         }
 
+        public ActionResult _SimpleTypeList()
+        {
+            var model = _classService.GetKBSimpleTypeList();
+            return PartialView(model);
+        }
+
         public ActionResult AddSimpleType(string typeName, string typeAlias)
         {
             _classService.AddKBSimpleType(typeName, typeAlias);
