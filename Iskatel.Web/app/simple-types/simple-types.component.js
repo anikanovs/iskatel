@@ -25,7 +25,7 @@
               this.Name = entity.Name;
               this.Alias = entity.Alias;
               this.modalModeText = "Редактировать тип поля";
-              this.mode = "Edit";
+              this.mode = "edit";
           };
 
           self.showAddForm = function () {
@@ -40,7 +40,14 @@
           self.deleteEntity = function (entity) {
               if (confirm("Удалить запись \"" + entity.Name + "\"?"))
               {
-                  alert("1");
+                  $http.delete('/api/Class/Delete/' + entity.Id).then(function (response) {
+                      if (response.data == "OK") {
+                          self.hideModal();
+                          self.getData();
+                      } else {
+                          alert(response);
+                      }
+                  });
               }
           };
 

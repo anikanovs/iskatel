@@ -91,6 +91,19 @@ namespace Iskatel.DataAccess.SQLServices
             }
         }
 
+        public bool DeleteKBSimpleType(int id)
+        {
+            using (var c = new iskateli_devEntities1())
+            {
+                var _class = c.Class.SingleOrDefault(x => x.Id == id);
+                var entities = c.Entity.Where(x => x.ClassId == id);
+                if (entities.Any()) return false;
+                c.Class.Remove(_class);
+                c.SaveChanges();
+                return true;
+            }
+        }
+
         public List<IdNamePair> GetKBEntityList()
         {
             using (var c = new iskateli_devEntities1())

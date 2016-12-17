@@ -21,5 +21,7 @@ namespace Iskatel.DataAccess.Intefaces
         KBEntity GetKBEntity(int id);
 
         void UpdateKBSimpleType(KBSimpleType entity);
+
+        bool DeleteKBSimpleType(int id);
     }
 }

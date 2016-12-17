@@ -35,5 +35,11 @@ namespace Iskatel.Web.Controllers.api
             _classService.AddKBSimpleType(entity.Name, entity.Alias);
             return "OK";
         }
+
+        public string Delete(int id)
+        {
+            _classService.DeleteKBSimpleType(id);
+            return "OK";
+        }
     }
 }
