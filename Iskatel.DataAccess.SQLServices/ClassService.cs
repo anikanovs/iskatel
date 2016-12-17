@@ -79,6 +79,18 @@ namespace Iskatel.DataAccess.SQLServices
             }
         }
 
+        public void UpdateKBSimpleType(KBSimpleType entity)
+        {
+            using (var c = new iskateli_devEntities1())
+            {
+                var _class = c.Class.SingleOrDefault(x => x.Id == entity.Id);
+                _class.Alias = entity.Alias;
+                var data = c.Data.SingleOrDefault(x => x.ClassId == entity.Id);
+                data.Data1 = entity.Name;
+                c.SaveChanges();
+            }
+        }
+
         public List<IdNamePair> GetKBEntityList()
         {
             using (var c = new iskateli_devEntities1())

@@ -24,5 +24,16 @@ namespace Iskatel.Web.Controllers.api
             var model = _classService.GetKBSimpleTypeList();
             return Json(model);
         }
+
+        public string Post(KBSimpleType entity) {
+            _classService.UpdateKBSimpleType(entity);
+            return "OK";
+        }
+
+        public string Put(KBSimpleType entity)
+        {
+            _classService.AddKBSimpleType(entity.Name, entity.Alias);
+            return "OK";
+        }
     }
 }

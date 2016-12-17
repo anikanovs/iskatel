@@ -19,5 +19,7 @@ namespace Iskatel.DataAccess.Intefaces
         void AddFieldToKBEntity(int entityId, string alias, string fieldName, int typeId);
 
         KBEntity GetKBEntity(int id);
+
+        void UpdateKBSimpleType(KBSimpleType entity);
     }
 }
