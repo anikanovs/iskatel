@@ -1,6 +1,59 @@
-﻿<ul>
-    <li ng-repeat="type in $ctrl.simpleTypes">
-        <span>{{type.Id}}</span>
-        <p>{{type.Alias}}</p>
-    </li>
-</ul>
+﻿<h1>Типы полей сущностей</h1>
+<table class="ordinary">
+    <thead>
+        <tr>
+            <th>
+                Id
+            </th>
+            <th>
+                Название
+            </th>
+            <th>
+                Алиас
+            </th>
+            <th>
+                &nbsp;
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr ng-repeat="type in $ctrl.simpleTypes">
+            <td>
+                {{type.Id}}
+            </td>
+            <td>
+                {{type.Name}}
+            </td>
+            <td>
+                {{type.Alias}}
+            </td>
+            <td>
+                <a ng-click="$ctrl.showEditForm(type.Id)" title="редактировать"><span class="glyphicon glyphicon-edit"></span></a>
+                <a href="!#/simple-type-delete/{{type.Id}}" title="удалить"><span class="glyphicon glyphicon-trash"></span></a>
+            </td>
+        </tr>
+    </tbody>
+</table>
+<!-- Modal -->
+<div class="modal-backdrop" style="visibility:{{$ctrl.showModal}}">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title">{{$ctrl.modalMode}}</h4>
+            </div>
+            <div class="modal-body">
+                <div class="form-group">
+                    <label class="col-md-2 control-label" for="id">Id</label>
+                    <div class="col-md-10">
+                        <input type="text" class = "form-control" name="id" disabled />
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Закрыть</button>
+                <button type="button" class="btn btn-primary">Сохранить изменения</button>
+            </div>
+        </div>
+    </div>
+</div>

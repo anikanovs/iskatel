@@ -1,12 +1,17 @@
 ﻿<!DOCTYPE html>
-<html>
+<html ng-app="iskateliBackend">
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>@ViewBag.Title - ISKATE.LI</title>
+    <title>ISKATE.LI</title>
     @Styles.Render("~/Content/css")
     @Scripts.Render("~/bundles/modernizr")
-
+    <script src="~/Scripts/angular.min.js"></script>
+    <script src="~/Scripts/angular-route.min.js"></script>
+    <script src="~/app/app.module.js"></script>
+    <script src="~/app/app.config.js"></script>
+    <script src="~/app/simple-types/simple-types.module.js"></script>
+    <script src="~/app/simple-types/simple-types.component.js"></script>
 </head>
 <body>
     <div class="navbar navbar-inverse navbar-fixed-top">
@@ -21,7 +26,7 @@
             </div>
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
-                    <li>@Html.ActionLink("Типы полей сущностей", "SimpleTypes", "Class")</li>
+                    <li><a href="#!/simple-types">Типы полей сущностей</a></li>
                     <li>@Html.ActionLink("Типы сущностей", "Entities", "Class")</li>
                 </ul>
                 @Html.Partial("_LoginPartial")
