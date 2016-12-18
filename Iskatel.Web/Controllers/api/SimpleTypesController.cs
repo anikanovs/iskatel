@@ -10,35 +10,35 @@ using System.Web.Http.Results;
 
 namespace Iskatel.Web.Controllers.api
 {
-    public class ClassController : ApiController
+    public class SimpleTypesController : ApiController
     {
-        private IClassService _classService;
+        private ISimpleTypesService _simpleTypesService;
 
-        public ClassController(IClassService classService)
+        public SimpleTypesController(ISimpleTypesService simpleTypesService)
         {
-            _classService = classService;
+            _simpleTypesService = simpleTypesService;
         }
 
         public JsonResult<List<KBSimpleType>> Get()
         {
-            var model = _classService.GetKBSimpleTypeList();
+            var model = _simpleTypesService.GetKBSimpleTypeList();
             return Json(model);
         }
 
         public string Post(KBSimpleType entity) {
-            _classService.UpdateKBSimpleType(entity);
+            _simpleTypesService.UpdateKBSimpleType(entity);
             return "OK";
         }
 
         public string Put(KBSimpleType entity)
         {
-            _classService.AddKBSimpleType(entity.Name, entity.Alias);
+            _simpleTypesService.AddKBSimpleType(entity.Name, entity.Alias);
             return "OK";
         }
 
         public string Delete(int id)
         {
-            _classService.DeleteKBSimpleType(id);
+            _simpleTypesService.DeleteKBSimpleType(id);
             return "OK";
         }
     }

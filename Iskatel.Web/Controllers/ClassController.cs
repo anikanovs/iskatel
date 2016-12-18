@@ -17,24 +17,6 @@ namespace Iskatel.Web.Controllers
         {
             _classService = classService;
         }
-        
-        public ActionResult SimpleTypes()
-        {
-            var model = _classService.GetKBSimpleTypeList();
-            return View(model);
-        }
-
-        public ActionResult _SimpleTypeList()
-        {
-            var model = _classService.GetKBSimpleTypeList();
-            return PartialView(model);
-        }
-
-        public ActionResult AddSimpleType(string typeName, string typeAlias)
-        {
-            _classService.AddKBSimpleType(typeName, typeAlias);
-            return RedirectToAction("SimpleTypes");
-        }
 
         public ActionResult Entities()
         {
@@ -52,7 +34,7 @@ namespace Iskatel.Web.Controllers
         {
             ViewBag.Entity = _classService.GetKBEntity(id);
             var model = new AddKBEntityFieldModel() { KBEntityId = id };
-            ViewBag.Types = _classService.GetKBSimpleTypeList();
+            //ViewBag.Types = _classService.GetKBSimpleTypeList();
             return View(model);
         }
 

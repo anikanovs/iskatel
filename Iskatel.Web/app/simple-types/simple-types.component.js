@@ -14,7 +14,7 @@
           };
 
           self.getData = function () {
-              $http.get('/api/Class/Get').then(function (response) {
+              $http.get('/api/SimpleTypes/Get').then(function (response) {
                   self.simpleTypes = response.data;
               });
           };
@@ -40,7 +40,7 @@
           self.deleteEntity = function (entity) {
               if (confirm("Удалить запись \"" + entity.Name + "\"?"))
               {
-                  $http.delete('/api/Class/Delete/' + entity.Id).then(function (response) {
+                  $http.delete('/api/SimpleTypes/Delete/' + entity.Id).then(function (response) {
                       if (response.data == "OK") {
                           self.hideModal();
                           self.getData();
@@ -58,7 +58,7 @@
                   Name: this.Name,
                   Alias: this.Alias
               };
-              $http.post('/api/Class/Post', entity).then(function (response) {
+              $http.post('/api/SimpleTypes/Post', entity).then(function (response) {
                   if (response.data == "OK") {
                       self.hideModal();
                       self.getData();
@@ -75,7 +75,7 @@
                   Name: this.Name,
                   Alias: this.Alias
               };
-              $http.put('/api/Class/Put', entity).then(function (response) {
+              $http.put('/api/SimpleTypes/Put', entity).then(function (response) {
                   if (response.data == "OK") {
                       self.hideModal();
                       self.getData();
