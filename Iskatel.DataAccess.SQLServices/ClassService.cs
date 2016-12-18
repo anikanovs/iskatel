@@ -6,7 +6,7 @@ using Iskatel.DataAccess.Intefaces;
 
 namespace Iskatel.DataAccess.SQLServices
 {
-    public class ClassService : IClassService
+    public class ClassService
     {
         public KBClass Get(int id, iskateli_devEntities1 context = null)
         {
@@ -44,39 +44,7 @@ namespace Iskatel.DataAccess.SQLServices
             }
         }
 
-        public List<IdNamePair> GetKBEntityList()
-        {
-            using (var c = new iskateli_devEntities1())
-            {
-                var query = from cl in c.Class
-                            join d in c.Data on cl.Id equals d.ClassId
-                            where cl.ParentId == (int)KBClassType.KBEntity
-                            select new IdNamePair()
-                            {
-                                Id = cl.Id,
-                                Name = d.Data1
-                            };
-                return query.ToList();
-            }
-        }
 
-        public void AddKBEntity(string entityName, string entityAlias)
-        {
-            using (var c = new iskateli_devEntities1())
-            {
-                var _class = c.Class.Create();
-                _class.ParentId = (int)KBClassType.KBEntity;
-                _class.TypeClassId = (int)KBClassType.KBEntity;
-                _class.Alias = entityAlias;
-                c.Class.Add(_class);
-                c.SaveChanges();
-                var data = c.Data.Create();
-                data.ClassId = _class.Id;
-                data.Data1 = entityName;
-                c.Data.Add(data);
-                c.SaveChanges();
-            }
-        }
 
         public void AddFieldToKBEntity(int entityId, string alias, string fieldName, int typeId)
         {

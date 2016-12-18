@@ -12,6 +12,8 @@
     <script src="~/app/app.config.js"></script>
     <script src="~/app/simple-types/simple-types.module.js"></script>
     <script src="~/app/simple-types/simple-types.component.js"></script>
+    <script src="~/app/entity-type-list/entity-type-list.module.js"></script>
+    <script src="~/app/entity-type-list/entity-type-list.component.js"></script>
 </head>
 <body>
     <div class="navbar navbar-inverse navbar-fixed-top">
@@ -27,7 +29,7 @@
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
                     <li><a href="/#!/simple-types">Типы полей сущностей</a></li>
-                    <li>@Html.ActionLink("Типы сущностей", "Entities", "Class")</li>
+                    <li><a href="/#!/entity-types">Типы сущностей</a></li>
                 </ul>
                 @Html.Partial("_LoginPartial")
             </div>

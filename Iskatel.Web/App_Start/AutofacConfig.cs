@@ -15,7 +15,7 @@ namespace Iskatel.Web
             var builder = new ContainerBuilder();
             builder.RegisterControllers(typeof(MvcApplication).Assembly);
             builder.RegisterApiControllers(typeof(MvcApplication).Assembly);
-            builder.RegisterType<ClassService>().As<IClassService>();
+            builder.RegisterType<EntityService>().As<IEntityService>();
             builder.RegisterType<SimpleTypesService>().As<ISimpleTypesService>();
             var container = builder.Build();
             DependencyResolver.SetResolver(new AutofacDependencyResolver(container));

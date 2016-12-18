@@ -212,8 +212,8 @@
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\api\EntityTypesController.cs" />
     <Compile Include="Controllers\api\SimpleTypesController.cs" />
-    <Compile Include="Controllers\ClassController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Global.asax.cs">
@@ -229,6 +229,9 @@
   <ItemGroup>
     <Content Include="app\app.config.js" />
     <Content Include="app\app.module.js" />
+    <Content Include="app\entity-type-list\entity-type-list.template.html" />
+    <Content Include="app\entity-type-list\entity-type-list.module.js" />
+    <Content Include="app\entity-type-list\entity-type-list.component.js" />
     <Content Include="app\simple-types\simple-types.template.html" />
     <Content Include="Content\bootstrap-theme.css" />
     <Content Include="Content\bootstrap-theme.min.css" />
@@ -303,11 +306,8 @@
     <Content Include="Views\Manage\VerifyPhoneNumber.cshtml" />
     <Content Include="Views\Shared\Lockout.cshtml" />
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
-    <Content Include="Views\Class\Entities.cshtml" />
-    <Content Include="Views\Class\EditEntity.cshtml" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="app\entity-types\" />
     <Folder Include="App_Data\" />
   </ItemGroup>
   <ItemGroup>

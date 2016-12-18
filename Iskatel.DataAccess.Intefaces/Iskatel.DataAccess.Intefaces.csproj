@@ -40,7 +40,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="IClassService.cs" />
+    <Compile Include="IEntityService.cs" />
     <Compile Include="ISimpleTypesService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

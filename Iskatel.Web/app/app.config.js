@@ -11,8 +11,8 @@
         when('/entity-types', {
             template: '<entity-type-list></entity-type-list>'
         }).
-        when('/phones/:phoneId', {
-          template: '<phone-detail></phone-detail>'
+        when('/entity-types/:entityId', {
+          template: '<entity-type-edit></entity-type-edit>'
         }).
         otherwise('/simple-types');
     }
