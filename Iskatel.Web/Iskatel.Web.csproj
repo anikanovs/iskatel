@@ -212,6 +212,7 @@
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\api\EntityFieldsController.cs" />
     <Compile Include="Controllers\api\EntityTypesController.cs" />
     <Compile Include="Controllers\api\SimpleTypesController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
@@ -229,6 +230,9 @@
   <ItemGroup>
     <Content Include="app\app.config.js" />
     <Content Include="app\app.module.js" />
+    <Content Include="app\entity-type-edit\entity-type-edit.template.html" />
+    <Content Include="app\entity-type-edit\entity-type-edit.module.js" />
+    <Content Include="app\entity-type-edit\entity-type-edit.component.js" />
     <Content Include="app\entity-type-list\entity-type-list.template.html" />
     <Content Include="app\entity-type-list\entity-type-list.module.js" />
     <Content Include="app\entity-type-list\entity-type-list.component.js" />

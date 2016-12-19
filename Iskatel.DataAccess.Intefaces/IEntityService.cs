@@ -8,6 +8,7 @@ namespace Iskatel.DataAccess.Intefaces
         void UpdateKBEntity(KBEntity entity);
         bool DeleteKBEntity(int id);
         List<KBEntity> GetKBEntityList();
+        KBEntity GetKBEntity(int id);
         void AddKBEntity(string typeName, string typeAlias);
     }
 }

@@ -25,6 +25,12 @@ namespace Iskatel.Web.Controllers.api
             return Json(model);
         }
 
+        public JsonResult<KBEntity> Get(int id)
+        {
+            var model = _entityTypesService.GetKBEntity(id);
+            return Json(model);
+        }
+
         public string Post(KBEntity entity) {
             _entityTypesService.UpdateKBEntity(entity);
             return "OK";

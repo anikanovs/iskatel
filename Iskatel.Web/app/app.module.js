@@ -1,3 +1,3 @@
 ﻿angular.module('iskateliBackend', [
-   'simpleTypes', 'entityTypeList', 'ngRoute'
+   'simpleTypes', 'entityTypeList', 'entityTypeEdit', 'ngRoute'
 ]);

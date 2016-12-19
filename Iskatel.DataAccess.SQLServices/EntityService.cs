@@ -25,6 +25,23 @@ namespace Iskatel.DataAccess.SQLServices
             }
         }
 
+        public KBEntity GetKBEntity(int id)
+        {
+            using (var c = new iskateli_devEntities1())
+            {
+                var query = from cl in c.Class
+                            join d in c.Data on cl.Id equals d.ClassId
+                            where cl.Id == id
+                            select new KBEntity()
+                            {
+                                Id = cl.Id,
+                                Name = d.Data1,
+                                Alias = cl.Alias
+                            };
+                return query.SingleOrDefault();
+            }
+        }
+
         public void AddKBEntity(string entityName, string entityAlias)
         {
             using (var c = new iskateli_devEntities1())
