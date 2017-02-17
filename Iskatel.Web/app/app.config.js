@@ -14,6 +14,9 @@
         when('/entity-types/:entityId', {
           template: '<entity-type-edit></entity-type-edit>'
         }).
+        when('/person', {
+            template: '<person-list></person-list>'
+        }).
         otherwise('/simple-types');
     }
   ])

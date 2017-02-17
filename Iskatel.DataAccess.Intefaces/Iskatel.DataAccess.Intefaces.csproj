@@ -42,6 +42,7 @@
   <ItemGroup>
     <Compile Include="IEntityFieldService.cs" />
     <Compile Include="IEntityService.cs" />
+    <Compile Include="IPersonService.cs" />
     <Compile Include="ISimpleTypesService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

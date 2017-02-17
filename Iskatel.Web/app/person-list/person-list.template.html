@@ -1,0 +1,37 @@
+﻿<h1>Персоналии</h1>
+<p><a href="/#!/person/0" title="добавить">Добавить</a></p>
+<table class="ordinary">
+    <thead>
+        <tr>
+            <th>
+                Id
+            </th>
+            <th>
+                Название
+            </th>
+            <th>
+                Алиас
+            </th>
+            <th>
+                &nbsp;
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr ng-repeat="person in $ctrl.persons">
+            <td>
+                {{person.Id}}
+            </td>
+            <td>
+                {{person.Name}}
+            </td>
+            <td>
+                {{person.Alias}}
+            </td>
+            <td>
+                <a href="/#!/person/{{person.Id}}" title="редактировать"><span class="glyphicon glyphicon-edit"></span></a>
+                <a ng-click="$ctrl.deleteEntity(person)" title="удалить"><span class="glyphicon glyphicon-trash"></span></a>
+            </td>
+        </tr>
+    </tbody>
+</table>

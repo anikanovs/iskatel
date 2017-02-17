@@ -18,6 +18,7 @@ namespace Iskatel.Web
             builder.RegisterType<EntityService>().As<IEntityService>();
             builder.RegisterType<EntityFieldService>().As<IEntityFieldService>();
             builder.RegisterType<SimpleTypesService>().As<ISimpleTypesService>();
+            builder.RegisterType<PersonService>().As<IPersonService>();
             var container = builder.Build();
             DependencyResolver.SetResolver(new AutofacDependencyResolver(container));
             GlobalConfiguration.Configuration.DependencyResolver = new AutofacWebApiDependencyResolver((IContainer)container);

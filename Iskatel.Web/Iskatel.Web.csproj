@@ -214,6 +214,7 @@
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\api\EntityFieldsController.cs" />
     <Compile Include="Controllers\api\EntityTypesController.cs" />
+    <Compile Include="Controllers\api\PersonController.cs" />
     <Compile Include="Controllers\api\SimpleTypesController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
@@ -236,6 +237,9 @@
     <Content Include="app\entity-type-list\entity-type-list.template.html" />
     <Content Include="app\entity-type-list\entity-type-list.module.js" />
     <Content Include="app\entity-type-list\entity-type-list.component.js" />
+    <Content Include="app\person-list\person-list.component.js" />
+    <Content Include="app\person-list\person-list.module.js" />
+    <Content Include="app\person-list\person-list.template.html" />
     <Content Include="app\simple-types\simple-types.template.html" />
     <Content Include="Content\bootstrap-theme.css" />
     <Content Include="Content\bootstrap-theme.min.css" />
